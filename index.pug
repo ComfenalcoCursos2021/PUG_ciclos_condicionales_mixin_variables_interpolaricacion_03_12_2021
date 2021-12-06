@@ -1,0 +1,134 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Document
+    body 
+        mixin suma(num1, mun2)
+            strong !{num1 + mun2}
+        
+        mixin div(nombre, num1= 5, num2=5)
+            div !{nombre}
+                p #[strong Soy el mixin]
+                | #[+suma(num1, num2)]
+
+        +div("<ins>Miguel</ins>")
+        +div("<ins>Juan</ins>", 10, 5)
+
+
+
+
+
+
+
+
+
+
+        //- -let cadena = "Miguel Angel";
+        //- -let etiqueta = "<strong>Te saludo</strong>";
+        //- -let edad = ()=>{ return 13};
+
+        //- p Hola #{cadena} #{`${Math.trunc(Math.random()*100)}`.toUpperCase()} como estas, #{etiqueta} soy PUG, tu edad es #{edad()}
+        //- hr
+        //- p Hola !{cadena} !{`${Math.trunc(Math.random()*100)}`.toUpperCase()} como estas, !{etiqueta} soy PUG, tu edad es !{edad()}
+        //- hr
+        //- div #[h1 Hola #[em #[ins !{cadena}]] soy el #[s parrafo]]
+        //- | #[hr]
+        //- //- div 
+        //- //-     h1 Hola 
+        //- //-         em 
+        //- //-             ins !{cadena}
+        //- //-         |  soy el 
+        //- //-         del parrafo  
+        //- p.
+        //-     Hola soy el parrafo !{etiqueta}
+        //-     Hola #[em()&attributes({id: "myEm"}) soy] el parrafo2
+
+
+        //- -let array = ["Miguel", "Castro", "Juan", "Carlo"];
+
+        //- while array.length
+        //-     p !{array.shift()}  
+
+
+
+
+
+        //- -let myDatos = [];
+        //- each valor in myDatos 
+        //-     p #{valor}
+        //- else 
+        //-     p #[h1(style="display:inline-block;") No hay datos] #[em :(]
+
+
+
+        //- -let myArray = ["Miguel"];
+        //- each valor in myArray.length ? myArray : ["No hay datos"] 
+        //-     p #{valor}
+
+
+
+        //- -let obj = {nombre: "Miguel", apellido: "Castro", edad: 23};
+        //- each valor, id in obj
+        //-     p #[strong #{id}] = #{valor}
+
+
+
+
+
+
+
+
+        //- ul(style={"list-style":"none", color: "red"})
+        //-     each data, id in ["Miguel", "Camilo", "Juan"]
+        //-         li #{id}: #{data}
+
+
+
+
+
+
+        //- -let bandera = false;
+        //- if !bandera
+        //-     p La condiocion es lo contrario #{bandera}
+
+        //- unless bandera
+        //-     p La condiocion es lo contrario #{bandera}
+
+
+
+
+        //- -let edad = 2;
+        //- if edad >= 18 || edad == 5
+        //-     p El usuario tiene #{edad} años y cumple con la condicion
+        //- else
+        //-     p El usuario es menor de edad
+
+
+
+
+        //- -let opcion = 8;
+        //- case opcion 
+        //-     when 8: p Soy la opcion #[strong 8] :)
+        //-     when 9: p la opcion 9 esta bien
+
+        //-     when 4
+        //-         p La opcion #{opcion}, tiene un break
+        //-         -break;
+        //-     when 1
+        //-     when 2
+        //-     when 3
+        //-         p La opcion #{opcion}, es valida 
+        //-             strong :)
+        //-     default 
+        //-         p La opcion #{opcion} no es valida
+
+
+
+
+
+        //- -let attr = {id: "myDiv", name: "myDiv"};
+        //- - attr.class = ['myClase', 'myClase2s'];
+        //- div&attributes(attr) Hola Mundo
